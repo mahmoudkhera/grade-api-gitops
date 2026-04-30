@@ -3,3 +3,4 @@ helm_chart/templates/notifactions*.yaml
 helm_chart/templates/inventory*.yaml
 helm_chart/values-inventory*
 helm_chart/values-notifactions*
+helm_chart/.env

@@ -6,5 +6,5 @@ set -u
 helm install  stock . \
   -f values-frontend.yaml \
   -f values-inventory.yaml \
-  -f values-notification.yaml \
+  -f values-notifactions.yaml \
   -f values.yaml
