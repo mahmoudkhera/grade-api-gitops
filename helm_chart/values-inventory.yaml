@@ -1,0 +1,25 @@
+inventory:
+  appName: inventory-app
+
+  image_name: mahmoudkhera/devops2-backend
+  image_tag: latest
+  serviceName: inventory
+  containerPort: 3001
+  service:
+    port_name: inventory-port
+    type: ClusterIP
+    port: 3001             
+    targetPort: 3001       
+    #nodePort: 30081   
+  configmap:
+    name: inventory
+    data:
+      PORT: 3001
+      HOST: '0.0.0.0'
+      
+      ORS_ORIGIN: '*'
+      NOTIFICATION_URL: http://notifications:3002/notify
+      ALERT_RECIPIENT: mkmahmoud944@gmail.com
+  secret:
+    name: database-secrets
+    DATABASE_URL: AgCWwU0JBTwfAfmKskQlpyffLDN4wkHxnXzU7FY7EzVZBKGJWxdAAzgrZ5YJCeaQ8rXg+ehVmCzxeFyYiGLrGFznARlxf83jrWma4Opw51WLxdRCP7G3q4lDZilmu4ZzFM58DdlY1LOdfrE03HwjZCfrPCG6wkL58vAD7snUMiJwXJpQ7Q+A2sxbI9rfEG6Hlmw71RDY0LsItp3yDHiI866d3Y5iShlry3+PaQvUdzKadQ/w4DmgajegHaRyo3TZhp7TalrOrojXJyDJNOddSdD8b9bib5iRnH8dhMTHiAOddyDZl2P4LovNFu2uqCOAgc4Z5zCwQcwHxA3j8O0gavKUnYQiRy2GsEWY/O6LEUJumZiGPEcIJmoJQ0b82cytyA4Wr469X8OsNRDjHkDj3r0rCzy6lLAGzHM8OH5/fmfJTBQp426DfGJFShdSEgVGqdrdNNArxhDYVz9IP7TrJWnLckSXKkIuF46r3usDlrE/nFPeOjSGc5K/xE36DkkTkxxYbbqRX3l99l73FHTRYIcEdu0r4kRAcrmFN/O8oAcprcYXF7gqWOXe2yhXUTc1ZTdC3RPDkY5mDGajiTGIW8p3WUQS7YYhmUZgDZ7DCm7VV9rlFeNfgloC52V4EfbKGjIAyRZSISBTZvzW8WewvSm84ud4VQyI9gDZMbvh7/qW28O6ORI4Pe/XvZlKMb0BGRHhv/kHtafkOTr3bMe/lJ1XBPQEYFntEmPgF9/GIduwzLzdXDr0Xhk6hFqonm9iHEscwt1CphpYNAaHnVVFCguVvqcXJ9s7qUFs5GOH6f+pmNa8Xu6daizMkvh1FHzPjYSPIUALlBidr6Otiovs7juwi+vMZpZkKl6WfA==

@@ -1,0 +1,25 @@
+
+notifactions:
+  appName: notifactions
+ 
+  image_name: mahmoudkhera/devops2-notifications
+  image_tag: latest
+  serviceName: notifications
+  containerPort: 3002
+  service:
+    type: ClusterIP
+    port: 3002             
+    targetPort: 3002       
+    #nodePort: 30082   
+  configmap:
+    name: notifications
+    data:
+      PORT: '3002'
+      HOST: 0.0.0.0
+      SMTP_PORT: '587'
+      SMTP_FROM: mahmoudkhera20@gmail.com
+  secret:
+    name: smtp-secrets
+    SMTP_HOST: AgDBLsy8/OgZOw1HLT21tdn668Y8VWUZcs98ZUZEv+j9JLswD3OKjrIB0/cePG1rRTduq52u5ippnE9DxPBoo3WuO2aiW4YqEWs0kSQxmH1wS9R1n01n/a0G3DvgrTF6mEcDg62+Xg8fnWV8QBYYSIUdWevL0rT3UL9FGXRfwnRLAopGobzEmMB5YgUMQKyBwD3I2H1b/VTYdV1cS+YhrTfVU5B2lhLv21OHBxFTa/ka3n+vDFTDxsIn2l5VkS0wxAkXPQZdYvF/qIkTKXDZOh3El0muAAozY+cXM4eK089fcXN1UG4t8fmNsETr2/MayPXc0nAry/5NzxXlo/2cFL6xqIzGqDA7eoJNpXe4Ibf6LkJgpNAMdLDmNbUm/YTpH3qK55io8mp+mwIIk8nEv9sa+8eTUPUd8jckIij+y0rcZ6JcSnKcRdYigyGIQJV/CuzIITS8Z2hSoLPeVIzKHsFtkKR5y58siXDruUR4Bz18czmj+w/xyxA3vcXBfemN5Z4Mud0keKlc/o5sa/hRXs4onOPTm5+mx8JNiDSfOPZqdtg2gGtOaSjHYNskS+KhpDSF7RdxbxghPf6q00voknVlfbrwcmhERjAN7TEfxcGh+8VXC0VDWvgShNgmhqgMk1hSZEPITOb/j9qr5Z3Uk94iWXagwqMgpwSrezkOlXluSppVNBzSSJkiggh6gUAgcPcQpdPfzZlb7ctuTvrs60IfdAPnWw==
+    SMTP_USER: AgC1sKijdxummPPXwuSlM8F/6qBdZhKB1LACtXbXkwaGflz4Edcl+jLV88+e2pxYYlkLRHP/IyzBmlQ/f+bTdWiW3lhAKHhsfQocbCvzuxq8pPYPXMWLP6lfsdAxTG2qKyh6jBCYB1GzmLjSH4JfHPUBd/0CJdrW/WiwSmOKxvRxrc/Jl3uNBD8UAjdBJ8nBccQ6K/bCNS5TIhnWdQ8NlWuguIznGwJXoECzBmPquCY/TNrHAyqAYgom3bknutB8f9iugBbjTofU4b6qQD+fwFy3R1SIr9+RdS+F5DCHmqs6PuZDa/sQmUtv2p2vq2fA6YEDddccRSyNUgTruIRHBMiHi7GmvkG4nu/GDaRGrajIWjYypOtUk1TonYLPUspFEa0sTfg5PFw0UfGSspP3Pln77Q5htSX1txT82GQ82kahMJcObFk5szLwJ8xXG4O6lMjyQPjaophL44M4/yOStwofHHECcGErtZpYpbuoK7Q3iyXZrmiPF9KHwUk3b2kKSDcpuL2Vh93070PyJTgcRd8LD32FsnbnnOQat3rSwm47LhUVU4ZkoBYhHqKP/chaCf4RiHSy/dF/CJohmHK5JtZeYrlVT2Awu2NouYmB6DBUuRBNETgo2X4GCcPII6nujMGoaEZlqNJgLuI6AZ4j7QnKid9ywcnSi8x8yNONqlQWEhxE/AxtjLQ3KS7CNK4Q/V79rTGa4joD65oQJvlPijsN2BBqDXoA7tQ=
+    SMTP_PASSWORD: AgCS8d7tiNia9KaHOMbUb+HzRk9xNiREsmGymKpYc5utZMzrSgSCE0QsM3FvvBLWx00Badrdp1EmE0zJjF/fdROZgGHxclR2Xm3tWDUokordvB2in0pR/6BrGXKsQIUT4MHi432a+OUJszp7Nqr85kejQ0W02drJ3OiRrDDFncfePcm+ayROMCivFJIFBlTirJVEu0BBJiWXKaCX9OI+4SUJRP2yFuhpvccG8G81aBut4Z+eywOFFr1qJtR6BOLrErTumXTpAtoF+tB0cmOZg5BkZUkvqqNjkDmOfAZghS/6IwXm9bGJHaiaw2iYzrvmrEUrO1rA9rekiSaZrD2SkaGJuBv/tLqpUB0UNAAVEKPhLEvxJdiu/eVwSgq3GU8x84LqgN7joEC37VcaoxAdhUDREj1e6xbe9czJedwiHxZQKUAywSkP++LbcRelcPMsQFjBUcEkQI5t4nIyMsa/heZUBBHs1jOUeZf2trye0O9pivwXvJlYw0x411wdET5pfJKLD2obSjjGV2Uy4gneauTgp5UCVsjIkVO3qq8WVBLBAu9Sk35T6MTJDjnrpLDgVfBWpUXzPcCT49SvZj0y5Iy4FjRB5Ct3mYmXfRN+glkeXdF9YB8Xiv6SToGuVFWaP2IeZHVdtojcpwLhIW/G7+Gv5x1HTSASTl0EYoflE+zgix4z2BSK5wtIpkZII1EJSottEH9/4OvikqQ2mQhShyPj0g9bNpHOEALLbvbUZsxLoOYU/DH55ijYNQ3hDloSZWqTd+4a7bJ53Fx6LQixdK1xDWTitBzceU/2wmh+o5Zixu91r65HU4/eytg=
