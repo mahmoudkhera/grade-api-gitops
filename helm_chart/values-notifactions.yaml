@@ -3,7 +3,7 @@ notifactions:
   appName: notifactions
  
   image_name: mahmoudkhera/devops2-notifications
-  image_tag: latest
+  image_tag: "59a0cebfc97872411e4703973549df1a13199e0b"
   serviceName: notifications
   containerPort: 3002
   service:

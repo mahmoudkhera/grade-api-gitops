@@ -2,7 +2,7 @@ inventory:
   appName: inventory-app
 
   image_name: mahmoudkhera/devops2-backend
-  image_tag: latest
+  image_tag: "59a0cebfc97872411e4703973549df1a13199e0b"
   serviceName: inventory
   containerPort: 3001
   service:
