@@ -21,13 +21,13 @@ spec:
             name: {{.Values.frontend.serviceName}}
             port: 
               name: {{.Values.frontend.service.port_name}}
-  - host: {{ .Values.ingress.inventory_host }}
-    http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: {{.Values.inventory.serviceName}}
-            port:
-              name: {{.Values.inventory.service.port_name}}
+  # - host: {{ .Values.ingress.inventory_host }}
+  #   http:
+  #     paths:
+  #     - path: /
+  #       pathType: Prefix
+  #       backend:
+  #         service:
+  #           name: {{.Values.inventory.serviceName}}
+  #           port:
+  #             name: {{.Values.inventory.service.port_name}}
