@@ -3,7 +3,7 @@ notifactions:
   appName: notifactions
  
   image_name: mahmoudkhera/devops2-notifications
-  image_tag: "buildcache"
+  image_tag: latest
   serviceName: notifications
   containerPort: 3002
   service:
