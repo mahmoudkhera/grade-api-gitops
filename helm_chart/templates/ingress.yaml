@@ -11,21 +11,21 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    http:
-      paths:
-      # Backend MUST come first (more specific path)
-      - path: /backend(/|$)(.*)
-        pathType: ImplementationSpecific
-        backend:
-          service:
-            name: {{ .Values.inventory.serviceName }}
-            port:
-              name: {{ .Values.inventory.service.port_name }}
-      # Frontend with capture group so $2 = full path
-      - path: /()(.*)
-        pathType: ImplementationSpecific
-        backend:
-          service:
-            name: {{ .Values.frontend.serviceName }}
-            port:
-              name: {{ .Values.frontend.service.port_name }}
+    - http:
+        paths:
+
+        - path: /backend(/|$)(.*)
+          pathType: ImplementationSpecific
+          backend:
+            service:
+              name: {{ .Values.inventory.serviceName }}
+              port:
+                name: {{ .Values.inventory.service.port_name }}
+
+        - path: /()(.*)
+          pathType: ImplementationSpecific
+          backend:
+            service:
+              name: {{ .Values.frontend.serviceName }}
+              port:
+                name: {{ .Values.frontend.service.port_name }}
