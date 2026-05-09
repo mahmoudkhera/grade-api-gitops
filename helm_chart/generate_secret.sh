@@ -12,6 +12,13 @@ fi
 for pair in "$@"; do
   KEY="${pair%%=*}"
   VALUE="${pair#*=}"
-  ENCRYPTED=$(echo -n "$VALUE" | kubeseal --raw --scope cluster-wide --from-file=/dev/stdin)
+
+  ENCRYPTED=$(echo -n "$VALUE" | kubeseal \
+    --raw \
+    --scope cluster-wide \
+    --controller-name sealed-secrets \
+    --controller-namespace kube-system \
+    --from-file=/dev/stdin)
+
   echo "    $KEY: $ENCRYPTED"
 done
